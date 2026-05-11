@@ -36,7 +36,7 @@ export async function chatWithGemini(history, userMessage) {
 
 export async function generateImage(prompt) {
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash-image",
+    model: "gemini-2.0-flash-preview-image-generation",
     contents: [{ role: "user", parts: [{ text: prompt }] }],
     config: {
       responseModalities: [Modality.TEXT, Modality.IMAGE],
