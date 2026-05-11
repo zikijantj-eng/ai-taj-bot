@@ -24,7 +24,7 @@ jobs:
       - name: Run bot
         env:
           BOT_TOKEN: "8766286210:AAGdPlMTdTRsCGCk_uBI7ZhnHl6Wmsgxa8o"
-          GEMINI_API_KEY: "AIzaSyAsCU0MZkIqIcPTwJ0vsVUFWkli3IwhD9I"
+          GEMINI_API_KEY: "AIzaSyD50HmdUoVNiY7cW1Ci1M6P9LoxmOXqHHM"
           CHANNEL_ID: "-1003987833715"
           CHANNEL_USERNAME: "tutor_100k"
         run: node src/index.js
