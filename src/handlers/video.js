@@ -56,6 +56,10 @@ export async function handleVideo(ctx, url) {
       "--no-warnings",
       "--merge-output-format", "mp4",
       "--max-filesize", "45m",
+      "--user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "--add-header", "Accept-Language:en-US,en;q=0.9",
+      "--extractor-args", "youtube:player_client=android,web",
+      "--no-check-certificates",
     ], { timeout: 120000 });
 
     if (!existsSync(tmpFile)) {
