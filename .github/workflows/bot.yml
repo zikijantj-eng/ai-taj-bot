@@ -1,0 +1,30 @@
+name: AI TAJ BOT
+on:
+  schedule:
+    - cron: '0 */5 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install yt-dlp
+        run: |
+          curl -L -o /usr/local/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+          chmod +x /usr/local/bin/yt-dlp
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: cd telegram-bot && npm install
+      - name: Run bot
+        env:
+          BOT_TOKEN: ${{ 8766286210:AAGdPlMTdTRsCGCk_uBI7ZhnHl6Wmsgxa8o }}
+          GEMINI_API_KEY: ${{ AIzaSyAsCU0MZkIqIcPTwJ0vsVUFWkli3IwhD9I }}
+          CHANNEL_ID: '-1003987833715'
+          CHANNEL_USERNAME: 'tutor_100k'
+        run: cd telegram-bot && node src/index.js
